@@ -1,5 +1,46 @@
 /***STYLE***/
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Caveat', cursive;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item {
+    float: left;
+    width: 700px;
+    height: 300px;
+    position: relative;
+}
+
+.item h3 {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.item .text {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    text-align: right;
+    color: white;
+    text-shadow: 2px 2px #000000;
+}
+
 .thumbs {
     float: left;
     height: 300px;
@@ -19,7 +60,8 @@
 }
 
 .thumb.active {
-    border: 2px solid #ccc;
+    outline: 5px solid rgb(187, 187, 187);
+    outline-offset: -.3rem;
     opacity: 1;
 }
 
@@ -41,12 +83,11 @@
     bottom: 0;
 }
 
-/*
-EXTRA: in questo esempio gli accordion vengono creati
+/*EXTRA: in questo esempio gli accordion vengono creati
 usando 2 bordi di un quadratino ruotato di 45 gradi
 In una versione base si possono usare delle icone
-oppure i caratteri ∧ (&and;) e ∨ (&or;)
- */
+oppure i caratteri ∧ (&and;) e ∨ (&or;)*/
+
 .prev::after {
     content: '';
     width: 10px;
