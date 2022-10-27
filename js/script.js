@@ -3,7 +3,7 @@ const { createApp } = Vue;
 const app = createApp({
     data() {
         return {
-            activeIndex: 0,
+            active: 0,
             autoscroll: null,
             slides: [
                 {
@@ -32,17 +32,17 @@ const app = createApp({
     },
     methods: {
         nextSlide: function () {
-            if (this.activeIndex < this.slides.length - 1) {
-                this.activeIndex++;
+            if (this.active < this.slides.length - 1) {
+                this.active++;
             } else {
-                this.activeIndex = 0;
+                this.active = 0;
             }
         },
         prevSlide: function () {
-            if (this.activeIndex > 0) {
-                this.activeIndex--;
+            if (this.active > 0) {
+                this.active--;
             } else {
-                this.activeIndex = this.slides.length - 1;
+                this.active = this.slides.length - 1;
             }
         },
         autoScroll() {
@@ -53,13 +53,12 @@ const app = createApp({
         stopAutoScroll() {
             clearInterval(this.autoscroll);
         },
-        showThisSlide(slideClicked) {
-            this.activeIndex = slideClicked;
+        Show(slideClicked) {
+            this.active = slideClicked;
         },
     },
     mounted() {
         this.autoScroll();
     }
-
 })
 app.mount('#app')
