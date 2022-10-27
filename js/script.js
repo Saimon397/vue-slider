@@ -50,7 +50,7 @@ const app = createApp({
                 this.nextSlide();
             }, 2000)
         },
-        StopScroll() {
+        stopAutoScroll() {
             clearInterval(this.autoscroll);
         },
         showThisSlide(slideClicked) {
@@ -60,5 +60,6 @@ const app = createApp({
     mounted() {
         this.autoScroll();
     }
+
 })
 app.mount('#app')
